@@ -1,6 +1,9 @@
 package delivery;
 
+import lombok.Getter;
+
 abstract class MenuItem {
+    @Getter
     protected String name;
     protected float price;
     protected String description;
@@ -11,3 +14,4 @@ abstract class MenuItem {
     }
     public abstract String getDetails();
 }
+

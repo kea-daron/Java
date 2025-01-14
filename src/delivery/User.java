@@ -1,7 +1,9 @@
 package delivery;
 import java.util.ArrayList;
 import java.util.List;
-class User {
+
+public class User {
+
     private int userId;
     private String name;
     private List<Order> orderHistory;
@@ -12,9 +14,13 @@ class User {
         this.orderHistory= new ArrayList<>();
     }
     public void placeOrder(Order order){
+        System.out.println(name + " has placed an order.");
+        order.updateStatus("Delivered");
         orderHistory.add(order);
     }
     public List<Order> viewOrderHistory(){
         return orderHistory;
     }
+
 }
+

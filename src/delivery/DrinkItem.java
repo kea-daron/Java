@@ -1,6 +1,6 @@
 package delivery;
 
-class DrinkItem extends MenuItem{
+class DrinkItem extends MenuItem {
     private String size;
     public DrinkItem(String size, float price, String name, String description){
         super(name,price,description);
@@ -8,9 +8,12 @@ class DrinkItem extends MenuItem{
     }
     @Override
     public String getDetails() {
-        return "Drink Item: " + name + "\n" +
+        return "\n[+] Drink Item: " + name + "\n" +
                 "Price: $" + price + "\n" +
                 "Description: " + description + "\n" +
                 "Size: " + size;
     }
 }
+
+
+

@@ -1,7 +1,11 @@
 package delivery;
 import java.util.ArrayList;
 import java.util.List;
-class Restaurant {
+
+import lombok.Getter;
+
+public class Restaurant {
+    @Getter
     private List<MenuItem> menu;
     private List<Order> orders;
 
@@ -20,3 +24,4 @@ class Restaurant {
         orders.add(order);
     }
 }
+

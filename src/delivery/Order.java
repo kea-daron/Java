@@ -3,12 +3,11 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+
 class Order {
     @Getter
     private static int ordercount=0;
-
     private int orderId ;
-
     private List<MenuItem> items;
     private String status;
 
@@ -30,9 +29,28 @@ class Order {
             total += item.price;
         }
         return total;
-
     }
     public void updateStatus(String new_status){
         this.status=new_status;
     }
+    public MenuItem getItem(int index) {
+        if (index >= 0 && index < items.size()) {
+            return items.get(index);
+        } else {
+            return null;
+        }
+    }
+    public List<MenuItem> getItems() {
+        return items;
+    }
+    public String getDetails() {
+        StringBuilder details = new StringBuilder();
+        details.append("Items:\n");
+        for (MenuItem item : items) {
+            details.append(item.getDetails()).append("\n");
+        }
+        details.append("Status: ").append(status);
+        return details.toString();
+    }
 }
+
